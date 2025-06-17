@@ -1,4 +1,6 @@
 //LeetCode Link -https://leetcode.com/problems/find-players-with-zero-or-one-losses
+//T.C : O(n*logn)
+//S.C : O(n)
 class PlayersWithZeroOROneLosses {
     public List<List<Integer>> findWinners(int[][] matches) {
         Map <Integer ,Integer> lostMap = new HashMap<>();
