@@ -1,5 +1,5 @@
 //https://leetcode.com/problems/smallest-number-in-infinite-set/
-//Approach 1
+//Approach:1
 
 class SmallestInfiniteSet {
     boolean[] arr;
@@ -34,9 +34,37 @@ class SmallestInfiniteSet {
     }
 }
 
-/**
- * Your SmallestInfiniteSet object will be instantiated and called as such:
- * SmallestInfiniteSet obj = new SmallestInfiniteSet();
- * int param_1 = obj.popSmallest();
- * obj.addBack(num);
- */
+/////////////////////////////
+///APPROACH - 2 ===================
+class SmallestInfiniteSet {
+    int currentSmallest;
+    HashSet<Integer> set;
+    PriorityQueue<Integer> pq;
+    public SmallestInfiniteSet() {
+        currentSmallest = 1;
+        set = new HashSet<>();
+        pq = new PriorityQueue<>();
+    }
+    
+    public int popSmallest() {
+        int result;
+        if(! pq.isEmpty()){
+            result = pq.poll();
+            set.remove(result);
+        }else{
+            result = currentSmallest;
+            currentSmallest++;
+        }
+
+        return result;
+    }
+    
+    public void addBack(int num) {
+        if(num >= currentSmallest || set.contains(num)){
+            return;
+        }
+        set.add(num);
+        pq.offer(num);
+    }
+}
+
