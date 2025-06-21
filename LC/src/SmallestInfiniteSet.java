@@ -1,5 +1,5 @@
 //https://leetcode.com/problems/smallest-number-in-infinite-set/
-//Approach:1
+//Approach:1 -- normal brute force h basic sa
 
 class SmallestInfiniteSet {
     boolean[] arr;
@@ -35,7 +35,7 @@ class SmallestInfiniteSet {
 }
 
 /////////////////////////////
-///APPROACH - 2 ===================
+///APPROACH - 2 =================== isme priorityQueue for min number and set ki addback krne ka ki nhi
 class SmallestInfiniteSet {
     int currentSmallest;
     HashSet<Integer> set;
@@ -68,3 +68,31 @@ class SmallestInfiniteSet {
     }
 }
 
+/** Approach 3-------only set ka use kiya h --------**/
+class SmallestInfiniteSet {
+    int currentSmallest;
+    TreeSet<Integer> s;
+    public SmallestInfiniteSet() {
+        currentSmallest = 1;
+        s = new TreeSet<>();
+    }
+    
+    public int popSmallest() {
+        int result;
+        if(!s.isEmpty()){
+            result = s.pollFirst();
+        }
+        else{
+            result = currentSmallest;
+            currentSmallest++;
+        }
+        return result;
+    }
+    
+    public void addBack(int num) {
+        if(num >= currentSmallest ||  s.contains(num)){
+            return;
+        }
+        s.add(num);
+    }
+}
