@@ -23,3 +23,31 @@ class EqualPairs {
         return count;
     }
 }
+///APPROACH - 2 0(n2) * 0[nlogn)
+class Solution {
+    public int equalPairs(int[][] grid) {
+        int count = 0;
+        HashMap<List<Integer> , Integer> map = new HashMap<>();
+        int n = grid.length;
+
+        for(int i = 0 ; i < n ;i++){
+            ArrayList <Integer> rowList = new ArrayList<>();
+            for(int j = 0 ;j < n;j++){
+                rowList.add(grid[i][j]);
+            }
+            map.put(rowList,map.getOrDefault(rowList,0) + 1);
+        }
+
+        for(int c = 0; c < n;c++){
+            ArrayList<Integer> colList = new ArrayList<>();
+            for(int r =0 ;r < n;r++){
+                colList.add(grid[r][c]);
+            }
+
+            count += map.getOrDefault(colList,0);
+        }
+
+        return count;
+
+    }
+}
