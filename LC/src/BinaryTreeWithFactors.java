@@ -13,7 +13,7 @@ Multiply -- root = arr[i] , LC = arr[j] , root%LC == 0 , rc = root/LC -> map
 mp[root] += mp[LC] * mp[RC] 
 **/
 
-class Solution {
+class BinaryTreeWithFactors {
     private static final int MOD = 1000000007;
     public int numFactoredBinaryTrees(int[] arr) {
         //int n = arr.length;
