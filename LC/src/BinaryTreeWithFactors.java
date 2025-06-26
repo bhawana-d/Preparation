@@ -11,6 +11,8 @@ j =0;j<i
   Total n^2
 Multiply -- root = arr[i] , LC = arr[j] , root%LC == 0 , rc = root/LC -> map
 mp[root] += mp[LC] * mp[RC] 
+
+
 **/
 
 class BinaryTreeWithFactors {
