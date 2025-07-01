@@ -25,3 +25,28 @@ class Solution {
         return count;
     }
 }
+//APPROACH 2 -- this will solve both the question 3016 that is part II -- simplified and clean code
+//T.C : O(n) + O(26log26)
+//S.C : O(1)
+public int minimumPushes(String word) {
+        Integer[] mp = new Integer[26];
+        for(int i =0;i < 26;i++){
+            mp[i] = 0;
+        }
+        for(char ch : word.toCharArray()){
+            mp[ch - 'a']++;
+
+        }
+
+        Arrays.sort(mp , Collections.reverseOrder());
+
+        int ans =0;
+
+        for(int i = 0;i < 26;i++){
+            int freq = mp[i];
+            int press = (i/8 + 1);
+
+            ans += freq * press;
+        }
+
+        return ans;
