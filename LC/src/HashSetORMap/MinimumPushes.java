@@ -1,4 +1,8 @@
 /**
+
+  Leetcode Link               : https://leetcode.com/problems/minimum-number-of-pushes-to-type-word-i/
+    Leetcode Link               : https://leetcode.com/problems/minimum-number-of-pushes-to-type-word-ii/
+
 //Approach-1 (Using Map and doing as asked in Problem)
 //T.C : O(n) + O(26log26)
 //S.C : O(n)
