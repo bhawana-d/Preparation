@@ -1,4 +1,5 @@
 //https://leetcode.com/problems/count-number-of-bad-pairs/description/
+
 class Solution {
     public long countBadPairs(int[] nums) {
         int n = nums.length;
