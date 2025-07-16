@@ -1,6 +1,7 @@
 https://leetcode.com/problems/minimum-index-of-a-valid-split/
 class Solution {
     public int minimumIndex(List<Integer> nums) {
+        
         HashMap<Integer,Integer> mp1 = new HashMap<>();
         HashMap<Integer,Integer> mp2 = new HashMap<>();
 
