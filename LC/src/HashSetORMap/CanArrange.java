@@ -6,6 +6,7 @@
 class Solution {
     public boolean canArrange(int[] arr, int k) {
         int[] mp = new int[k];
+        
 
         for(int num : arr){
             int rem = (num%k + k)%k;
